@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+
+    <!-- Common checks for Site-->
+    <script>
+        jQuery(document).ready(function () {
+
+            // Check for FileReader API (HTML5) support.
+            if (!window.FileReader) {
+                alert('This browser does not support the FileReader API.');
+            }
+        });
+    </script>
+
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">@Html.ActionLink("File Demo", "Index", "Home")</p>
+            </div>
+            <div class="float-right">
+                <section id="login">
+                </section>
+                <nav>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Upload", "Upload", "Home")</li>
+                        <li>@Html.ActionLink("Download", "Download", "Home")</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="featured">
+            <div class="content-wrapper">
+                <hgroup class="title">
+                    <h1>@ViewBag.Title.</h1>
+                    <h2>@ViewBag.Message</h2>
+                </hgroup>
+                <p>
+                    To learn more about ASP.NET MVC File Upload and Download visit
+                <a href="http://b360overflow.staging.wpengine.com/" title="BizTalk360 Team Blog">BizTalk360 Team Blog</a>.
+                If you have any questions about this tutorial email me - rajeshkumar.kandhasamy@biztalk360.co.uk
+                </p>
+            </div>
+        </section>
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+        <div class="modal">
+            <!-- Place at bottom of page -->
+        </div>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+            </div>
+        </div>
+    </footer>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

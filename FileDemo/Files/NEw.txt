@@ -1,0 +1,10 @@
+Advanced Concepts
+.Net Web Service Basics
+XML Serialization
+.Net Web Service Client
+WSDL
+Extending .Net Web Services
+Discovering Web Services
+Securing Web Services
+SOAP
+Messaging with Web Services
